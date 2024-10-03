@@ -7,3 +7,9 @@ $head->header(); // Call the header method from the correct class
 require_once 'paging\footer.php'; // Ensure the correct class file is loaded
 $foot = new footer(); // Correct class name 
 $foot->footer(); // Call the footer method from the correct class
+
+
+
+$conn= new dbconnection(DBTYPE, HOSTNAME, DBPORT,
+     HOSTUSER, HOSTPASSWORD, DBNAME);
+
