@@ -4,18 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="C:\xampp\htdocs\Bootstrap\css\style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
     <link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
     <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
     <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
     <link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
     <link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
     <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
-    <link rel="stylesheet" href="mockup\style.css">
+    
+    <link rel="stylesheet" href="bootstrap-offline\css\bootstrap.css">
+    <link rel="stylesheet" href="bootstrap-offline\css\bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
   </head>
   <body>
+
     <nav>
-      <img src="mockup\images\logo.png" alt="logo" width="50" height="50" float="left">
+      <img src="images\logo.png" alt="logo" width="50" height="50" float="left">
         <div class ="navigation">
           <div class="title">PROSTATECANCER.KE</div>
           <ul>
@@ -46,7 +54,10 @@
     </nav>
 
 
-    <div class="container">
+    <div class="form-container">
+      <div class="loginimage">
+        <img src="images\Laughing Men Photos, Download The BEST Free Laughing Men Stock Photos & HD Images.jpeg">
+      </div>
       <div class="Intro">
         <h1>Welcome to Pro-state</h1>
       </div>
@@ -55,11 +66,37 @@
         <form action="loginform.php" method="POST">
           <label for="email">email</label><br>
           <input type="text" id="email" name="email"><br>
+
           <label for="username">username:</label><br>
           <input type="text" id="username" name="username"><br>
+
+
           <label for="password">password:</label>
-          <i class="glyphicon glyphicon-eye-close"></i><br>
-          <input type="password" id="password" name="password">
+            <span class="toggle-password" onclick="togglePasswordVisibility()">
+              <i class="bi bi-eye-slash" id="toggle-icon"></i>
+          </span><br>
+            <div class="password-container">
+                <input type="password" id="password" name="password" class="password-input" required>
+                
+            </div>
+            <br>
+        </form>
+    
+        <script>
+            function togglePasswordVisibility() {
+                var passwordField = document.getElementById("password");
+                var toggleIcon = document.getElementById("toggle-icon");
+                if (passwordField.type === "password") {
+                    passwordField.type = "text";
+                    toggleIcon.classList.remove("bi-eye-slash");
+                    toggleIcon.classList.add("bi-eye");
+                } else {
+                    passwordField.type = "password";
+                    toggleIcon.classList.remove("bi-eye");
+                    toggleIcon.classList.add("bi-eye-slash");
+                }
+            }
+        </script>
         </form>
       </div>
       <div>
